@@ -1,2 +1,2 @@
 # DevolveFacil
-Projeto do 3sem/SENAC-FL
+Projeto SENAC-FL
