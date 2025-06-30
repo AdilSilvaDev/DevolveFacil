@@ -1,0 +1,116 @@
+.coletas-page {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.filtros-section {
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.coletas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.coleta-card {
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.coleta-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: #667eea;
+}
+
+.coleta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.coleta-codigo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.coleta-content {
+  margin-bottom: 20px;
+}
+
+.coleta-descricao {
+  color: #6c757d;
+  margin-bottom: 16px;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.coleta-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-item {
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.info-item strong {
+  color: #2c3e50;
+}
+
+.coleta-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.coleta-actions .btn {
+  flex: 1;
+  min-width: 120px;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6c757d;
+}
+
+.empty-state p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .coletas-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .coleta-card {
+    padding: 16px;
+  }
+  
+  .coleta-actions {
+    flex-direction: column;
+  }
+  
+  .coleta-actions .btn {
+    width: 100%;
+  }
+} 

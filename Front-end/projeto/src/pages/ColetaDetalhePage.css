@@ -1,0 +1,136 @@
+.coleta-detalhe-page {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.info-section {
+  margin-bottom: 24px;
+}
+
+.info-section h3 {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.info-item {
+  margin-bottom: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #f8f9fa;
+}
+
+.info-item strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.participantes-section {
+  margin-bottom: 24px;
+}
+
+.participantes-section h3 {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.ocorrencias-section {
+  margin-bottom: 24px;
+}
+
+.ocorrencias-section h3 {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.ocorrencias-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ocorrencia-item {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  border-left: 4px solid #667eea;
+}
+
+.ocorrencia-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.ocorrencia-data {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.ocorrencia-comentario {
+  margin-bottom: 8px;
+  color: #495057;
+  line-height: 1.5;
+}
+
+.ocorrencia-usuario {
+  font-size: 0.85rem;
+  color: #6c757d;
+  font-style: italic;
+}
+
+.acoes-section {
+  margin-bottom: 24px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.acoes-section h3 {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.status-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.acoes-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #e9ecef;
+}
+
+.acoes-buttons .btn {
+  min-width: 150px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .ocorrencia-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .acoes-buttons {
+    flex-direction: column;
+  }
+  
+  .acoes-buttons .btn {
+    width: 100%;
+  }
+} 
