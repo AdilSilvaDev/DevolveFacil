@@ -4,6 +4,17 @@ import { AuthContext } from '../context/AuthContext';
 import { criarColeta } from '../api/api';
 import './NovaColetaPage.css';
 
+const buscarEnderecoPorCep = async (cep) => {
+  try {
+    const res = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+    const data = await res.json();
+    if (data.erro) return null;
+    return data;
+  } catch {
+    return null;
+  }
+};
+
 const NovaColetaPage = () => {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
@@ -17,12 +28,27 @@ const NovaColetaPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     const { name, value } = e.target;
+     let newValue = value;
+    if (name === "enderecoColeta") {
+      newValue = value.replace(/\D/g, '').slice(0, 8); 
+    }
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: newValue
     }));
+ if (name === "enderecoColeta" && newValue.length === 8) {
+      const data = await buscarEnderecoPorCep(newValue);
+      if (data) {
+        setFormData(prev => ({
+          ...prev,
+          enderecoColeta: `${data.logradouro}, ${data.bairro}, ${data.localidade}`
+        }));
+      } else {
+        alert('CEP não encontrado!');
+      }
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -75,7 +101,10 @@ const NovaColetaPage = () => {
                 value={formData.enderecoColeta}
                 onChange={handleChange}
                 className="form-input"
-                placeholder="Endereço onde será feita a coleta"
+                placeholder="Digite o CEP (apenas números)"
+                maxLength={8}
+                pattern="\d{8}"
+                inputMode="numeric" 
               />
             </div>
 
