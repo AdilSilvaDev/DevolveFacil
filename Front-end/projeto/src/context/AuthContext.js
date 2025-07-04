@@ -7,18 +7,21 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const userData = await getMe();
-        setUser(userData);
-      } catch {
-        setUser(null);
-      }
-      setLoading(false);
-    };
-    fetchUser();
-  }, []);
+ useEffect(() => {
+  const fetchUser = async () => {
+    try {
+      const userData = await getMe();
+      console.log("Usuário logado:", userData);
+      setUser(userData);
+    } catch (error) {
+      console.log("Erro ao buscar usuário:", error);
+      setUser(null);
+    }
+    setLoading(false);
+  };
+  fetchUser();
+}, []);
+
 
   const login = async (email, senha) => {
     const userData = await apiLogin(email, senha);
